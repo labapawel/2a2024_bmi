@@ -48,5 +48,18 @@ namespace _2a_bmi
             da.Fill(sd);
             dataGridView1.DataSource = sd.Tables[0];
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double masa = double.Parse(textBox1.Text.Replace(".",","));
+                double wzrost = double.Parse(textBox2.Text.Replace(".", ","))*0.01;
+                double bmi = masa / Math.Pow(wzrost, 2);
+                Wynik.Text = $"Wynik {bmi}";
+                
+
+            } catch (Exception ex) { };
+        }
     }
 }
