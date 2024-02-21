@@ -43,7 +43,10 @@ namespace _2a_bmi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from wyniki", Connection);
+            DataSet sd = new DataSet();
+            da.Fill(sd);
+            dataGridView1.DataSource = sd.Tables[0];
         }
     }
 }
